@@ -181,3 +181,12 @@ nmap <leader>gh:tabnew <bar>r !grep -riHn <C-R><C-W> ./*<CR>
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
 nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
 
+" For showing list characters like space tab new line etc. It toggles the
+" viewing of list characters
+nmap <leader>l :set list!<CR>
+
+" Base64 decode word under cursor
+nmap <Leader>b :!echo <C-R><C-W> \| base64 -d<CR>
+
+" sort the buffer removing duplicates
+nmap <Leader>s :%!sort -u --version-sort<CR>
