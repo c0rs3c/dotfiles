@@ -190,3 +190,9 @@ nmap <Leader>b :!echo <C-R><C-W> \| base64 -d<CR>
 
 " sort the buffer removing duplicates
 nmap <Leader>s :%!sort -u --version-sort<CR>
+
+"Remaps copy pasting from system clipboard to quote plus registers as present
+"in normal system like ctrl+c , ctrl+v and ctrl+x
+inoremap <C-v> <ESC>"+pa
+vnoremap <C-c> "+y
+vnoremap <C-x> "+d
