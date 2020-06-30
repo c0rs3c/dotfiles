@@ -64,6 +64,11 @@ Plug 'vim-scripts/Wombat'
 "For Commenting in vim use #gcc for # number of lines commenting. gc<motion>
 "is used to comment according to motion. For example gca< , it will comment
 "around <
+"FROM GITHUB">> Comment stuff out. Use gcc to comment out a line (takes a count)
+", gc to comment out the target of a motion (for example, gcap to comment out a 
+"paragraph), gc in visual mode to comment out the selection, and gc in operator 
+"pending mode to target a comment. You can also use it as a command, either with 
+"a range like :7,17Commentary, or as part of a :global invocation like with :g/TODO/Commentary
 Plug 'tpope/vim-commentary'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
