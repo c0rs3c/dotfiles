@@ -61,6 +61,10 @@ Plug 'davidhalter/jedi-vim'
 
 " Gvim colorscheme
 Plug 'vim-scripts/Wombat'
+"For Commenting in vim use #gcc for # number of lines commenting. gc<motion>
+"is used to comment according to motion. For example gca< , it will comment
+"around <
+Plug 'tpope/vim-commentary'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
