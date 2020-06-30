@@ -38,7 +38,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Terminal Vim with 256 colors colorscheme
 Plug 'fisadev/fisa-vim-colorscheme'
-" Surround
+
+" cs"'--> This will replace surrounding " with '
+" cs'<q> --> This will replace surroundig ' with <q>
+" ysiw{ --> This will surround the word with {
+" yss{ --> This shall surround the sentence with {
+" ds{ --> This will remove the surrounding {     
 Plug 'tpope/vim-surround'
 " Autoclose. Puts closing tag automatically if opening tag given. For example
 " if { is typed } is automatically placed
