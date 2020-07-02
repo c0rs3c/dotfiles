@@ -210,3 +210,6 @@ nmap <Leader>s :%!sort -u --version-sort<CR>
 inoremap <C-v> <ESC>"+pa
 vnoremap <C-c> "+y
 vnoremap <C-x> "+d
+"To toggle higlighting of the searched word in VIM. When a word is searched in
+"VIM it remains higlighted even afterwards
+nnoremap <F3> :set hlsearch!<CR>
