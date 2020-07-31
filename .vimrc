@@ -37,8 +37,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Terminal Vim with 256 colors colorscheme
-Plug 'fisadev/fisa-vim-colorscheme'
-
+Plug 'rafi/awesome-vim-colorschemes'
 " cs"'--> This will replace surrounding " with '
 " cs'<q> --> This will replace surroundig ' with <q>
 " ysiw{ --> This will surround the word with {
@@ -52,8 +51,6 @@ Plug 'Townk/vim-autoclose'
 Plug 'michaeljsmith/vim-indent-object'
 " Indentation based movements
 Plug 'jeetsukumaran/vim-indentwise'
-" Python and other languages code checker
-Plug 'davidhalter/jedi-vim'
 
 " Relative numbering of lines (0 is the current line)
 " (disabled by default because is very intrusive and can't be easily toggled
@@ -62,10 +59,7 @@ Plug 'davidhalter/jedi-vim'
 " to avoid that)
 " Plug 'myusuf3/numbers.vim'
 
-" Plugins from vim-scripts repos:
 
-" Gvim colorscheme
-Plug 'vim-scripts/Wombat'
 "For Commenting in vim use #gcc for # number of lines commenting. gc<motion>
 "is used to comment according to motion. For example gca< , it will comment
 "around <
@@ -75,8 +69,14 @@ Plug 'vim-scripts/Wombat'
 "pending mode to target a comment. You can also use it as a command, either with 
 "a range like :7,17Commentary, or as part of a :global invocation like with :g/TODO/Commentary
 Plug 'tpope/vim-commentary'
+"For Syntax highligting in different language
+Plug 'sheerun/vim-polyglot'
+"For code-completion like any IDE. Need to install language engine as well.
+"Hence do :CocInstall coc-json coc-tsserver coc-html coc-css coc-prettier(it
+"is prettier extension for JS in COC.VIM) etc after the installation
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Tell vim-plug we finished declaring plugins, so it can load them
+" Tell vimuplug we finished declaring plugins, so it can load them
 call plug#end()
 
 " ============================================================================
@@ -140,19 +140,8 @@ imap <M-Down> <ESC><c-w>j
 nmap zz :q!<CR>
 nmap wzz :wq!<CR>
 
-
-" use 256 colors when possible
-if (&term =~? 'mlterm\|xterm\|xterm-256\|screen-256') || has('nvim')
-	let &t_Co = 256
-    colorscheme fisa
-else
-    colorscheme delek
-endif
-
-" colors for gvim
-if has('gui_running')
-    colorscheme wombat
-endif
+"colorschme selected from installed awesome-vim-fonts 
+colorscheme dracula
 
 " when scrolling, keep cursor 3 lines away from screen border
 set scrolloff=3
@@ -172,8 +161,12 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 " Airline ------------------------------
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'luna'
 let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " Colorscheme
 if &t_Co == 256
@@ -212,4 +205,5 @@ vnoremap <C-c> "+y
 vnoremap <C-x> "+d
 "To toggle higlighting of the searched word in VIM. When a word is searched in
 "VIM it remains higlighted even afterwards
-nnoremap <F3> :set hlsearch!<CR>
+nnoremap <F2> :set hlsearch!<CR>
+
