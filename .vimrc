@@ -75,7 +75,11 @@ Plug 'sheerun/vim-polyglot'
 "Hence do :CocInstall coc-json coc-tsserver coc-html coc-css coc-prettier(it
 "is prettier extension for JS in COC.VIM) etc after the installation
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+"For viewing data in tabular format in an aligned manner
+":Tabularize /= ..... This commmand shall tabularize fields at all = signs
+":Tabularizr /=/r1 ... It shall right align each field with 1 padding space
+"afetr each field
+Plug 'godlygeek/tabular'
 " Tell vimuplug we finished declaring plugins, so it can load them
 call plug#end()
 
