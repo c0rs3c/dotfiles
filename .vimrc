@@ -80,6 +80,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 ":Tabularizr /=/r1 ... It shall right align each field with 1 padding space
 "afetr each field
 Plug 'godlygeek/tabular'
+Plug 'maksimr/vim-jsbeautify'
 " Tell vimuplug we finished declaring plugins, so it can load them
 call plug#end()
 
@@ -210,4 +211,15 @@ vnoremap <C-x> "+d
 "To toggle higlighting of the searched word in VIM. When a word is searched in
 "VIM it remains higlighted even afterwards
 nnoremap <F2> :set hlsearch!<CR>
-
+" For vim-jsbeaautify plugin to beautify js,css,html,json files
+map <c-f> :call JsBeautify()<cr>
+" for javascript
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+" for json
+autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+" for jsx
+autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
