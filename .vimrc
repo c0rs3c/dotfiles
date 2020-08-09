@@ -81,6 +81,18 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "afetr each field
 Plug 'godlygeek/tabular'
 Plug 'maksimr/vim-jsbeautify'
+"For folding the document based on indentation and curly braces etc
+"Use :AnyFoldActivate to activate the vim-anyfold
+" zi	switch folding on or off
+" za	toggle current fold open/closed
+" zc	close current fold
+" zR	open all folds
+" zM	close all folds
+" zj	move down to top of next fold
+" zk	move up to bottom of previous fold
+"[[     Navigate to begnning of current fold
+"]]     Navigate to end of current fold
+Plug 'pseewald/vim-anyfold'
 " Tell vimuplug we finished declaring plugins, so it can load them
 call plug#end()
 
@@ -223,3 +235,7 @@ autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
 autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+
+" For toggling open and close fold with space. za is a default fold commmand
+" which is mapped to space and used by vim-anyfold plugin as well 
+nnoremap <Space> za
