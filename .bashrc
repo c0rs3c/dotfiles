@@ -84,6 +84,9 @@ alias la='ls -A'
 alias l='ls -CF'
 #It has been added because vim colorscheme and airline color scheme in tmux changes
 alias tmux='tmux -2 -u'
+#ffuff alias to avoid WAF blocking
+alias ffuf='ffuf -H "User-agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1468.0 Safari/537.36" -H "Accept: */*"'
+alias phs='python3 -m http.server'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -226,3 +229,5 @@ fi
 
 # Patent Pending Prompt
 export PS1="${nameC}\u${atC}@${hostC}\h:${pathC}\w${pointerC}▶${normalC} "
+# This is added if in some terminal inputs while typing does not wrap
+# export PS1="${nameC}\u${atC}@${hostC}\h:${pathC}\w${pointerC}#${normalC} "
